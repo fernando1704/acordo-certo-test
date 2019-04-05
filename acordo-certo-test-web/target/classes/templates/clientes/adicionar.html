@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro de Clientes</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/all.css}" />
+<link rel="stylesheet" th:href="@{/css/jquery.ui.css}" />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/scripts.js}"></script>
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Cadastro de Clientes</h3>
+			
+			<div id="feedback"></div>
+			
+		</div>
+		
+		
+		<div class="panel-body">
+			<form class="form-horizontal" name="clientes-add" id="clientes-add" th:object="${cliente}"
+				th:action="@{/adicionar}" method="POST" style="margin: 10px">
+				<div class="form-group">
+					<fieldset>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label>Nome</label> <input type="text" class="form-control"
+									id="nome" th:field="*{nome}" />
+							</div>
+
+							<div class="col-md-4">
+								<label>Email</label> <input type="text" class="form-control"
+									th:field="*{email}" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label>Celular</label> <input type="text" class="form-control"
+									id="nome" th:field="*{celular}" />
+							</div>
+
+							<div class="col-md-4">
+
+								<label>Sexo</label> <br /> <label><input type="radio"
+									th:field="*{sexo}" value="m"> Masculino</label> <label><input
+									type="radio" th:field="*{sexo}" value="f"> Feminino</label>
+
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label>Endereco</label> <input type="text" class="form-control"
+									id="nome" th:field="*{endereco}" />
+							</div>
+
+							<div class="col-md-4">
+								<label>Bairro</label> <input type="text" class="form-control"
+									id="nome" th:field="*{bairro}" />
+							</div>
+						</div>
+						<div class="form-group row">
+
+							<div class="col-md-4">
+								<label>Cidade</label> <input type="text" class="form-control"
+									id="nome" th:field="*{cidade}" />
+							</div>
+
+							<div class="col-md-4">
+								<label>CEP</label> <input type="text" class="form-control"
+									id="nome" th:field="*{cep}" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+
+							<div class="col-md-4">
+								<label>UF</label> <select class="form-control" th:field="*{uf}">
+									<option value=""></option>
+									<option value="AC">AC</option>
+									<option value="AL">AL</option>
+									<option value="AM">AM</option>
+									<option value="AP">AP</option>
+									<option value="BA">BA</option>
+									<option value="CE">CE</option>
+									<option value="DF">DF</option>
+									<option value="ES">ES</option>
+									<option value="GO">GO</option>
+									<option value="MA">MA</option>
+									<option value="MG">MG</option>
+									<option value="MS">MS</option>
+									<option value="MT">MT</option>
+									<option value="PA">PA</option>
+									<option value="PB">PB</option>
+									<option value="PE">PE</option>
+									<option value="PI">PI</option>
+									<option value="PR">PR</option>
+									<option value="RJ">RJ</option>
+									<option value="RN">RN</option>
+									<option value="RO">RO</option>
+									<option value="RR">RR</option>
+									<option value="RS">RS</option>
+									<option value="SC">SC</option>
+									<option value="SE">SE</option>
+									<option value="SP">SP</option>
+									<option value="TO">TO</option>
+
+								</select>
+
+							</div>
+
+						</div>
+
+						<div class="form-group row">
+
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-primary pull-right">Salvar</button>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>
